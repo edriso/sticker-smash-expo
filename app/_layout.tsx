@@ -10,7 +10,7 @@ LogBox.ignoreAllLogs(true);
 
 export default function RootLayout() {
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
+    <GestureHandlerRootView>
       {/* <StatusBar barStyle="light-content" /> */}
       <ExpoStatusBar style="light" />
       <Stack>
