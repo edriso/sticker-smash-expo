@@ -10,6 +10,7 @@ const PlaceholderImage = require("@/assets/images/jonny-gios.jpg");
 
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [showAppOptions, setShowAppOptions] = useState(false);
 
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -18,6 +19,8 @@ export default function Index() {
     });
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
+      setShowAppOptions(true);
+      // console.log("Selected image:", selectedImage); // Appears in the browser console
     } else {
       alert("You did not select any image.");
     }
@@ -38,19 +41,23 @@ export default function Index() {
         <ImageViewer imageSource={selectedImage ?? PlaceholderImage} />
       </View>
 
-      <View style={styles.footerContainer}>
-        <Button
-          theme={"primary"}
-          label="Choose a photo"
-          onPress={pickImageAsync}
-        />
-        <Button
-          label="Use this photo"
-          // onPress={() => setShowAppOptions(true)}
-          onPress={() => alert("Button pressed")}
-          theme="secondary"
-        />
-      </View>
+      {showAppOptions ? (
+        <View />
+      ) : (
+        <View style={styles.footerContainer}>
+          <Button
+            theme={"primary"}
+            label="Choose a photo"
+            onPress={pickImageAsync}
+          />
+          <Button
+            label="Use this photo"
+            onPress={() => setShowAppOptions(true)}
+            theme="secondary"
+          />
+        </View>
+
+      )}
     </View>
   );
 }
