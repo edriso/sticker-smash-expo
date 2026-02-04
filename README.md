@@ -1,50 +1,62 @@
-# Welcome to your Expo app 👋
+# StickerSmash
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A fun app that lets you add emoji stickers to your photos and save the result. Built with React Native and Expo, it runs on Android, iOS, and the web with a single codebase.
 
-## Get started
+![StickerSmash App Preview](./assets/images/screenshot.png)
 
-1. Install dependencies
+## What This App Does
+
+- Pick a photo from your device or use a default image
+- Add emoji stickers to your photos
+- Move stickers around with touch gestures
+- Save your creation to your device or download it (on web)
+
+## Getting Started
+
+1. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. **Start the app**
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+   You'll see options to open the app in:
+   - Android emulator
+   - iOS simulator
+   - Web browser
+   - Expo Go app (on your phone)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## How It Works
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+This app was built following the [Expo tutorial](https://docs.expo.dev/tutorial/introduction/). It demonstrates:
 
-## Get a fresh project
+- Creating screens with Expo Router
+- Using image pickers to select photos
+- Building modals and interactive components
+- Adding touch gestures for moving stickers
+- Taking screenshots and saving them
+- Handling differences between Android, iOS, and web platforms
 
-When you're ready, run:
+## Project Structure
 
-```bash
-npm run reset-project
-```
+- `app/` - Main app screens and routing
+- `components/` - Reusable UI components (buttons, image viewer, emoji picker, etc.)
+- `assets/` - Images and other static assets
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Learn More
 
-## Learn more
+- [Expo Documentation](https://docs.expo.dev/) - Learn the fundamentals
+- [Expo Tutorial](https://docs.expo.dev/tutorial/introduction/) - Step-by-step guide to building this app
+- [Expo Router](https://docs.expo.dev/router/introduction/) - File-based routing for React Native
 
-To learn more about developing your project with Expo, look at the following resources:
+## Built With
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [Expo Router](https://docs.expo.dev/router/introduction/)
+- TypeScript
