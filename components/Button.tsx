@@ -1,5 +1,5 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 interface Props {
     label: string;
@@ -15,18 +15,17 @@ export default function Button({ label, onPress, theme = "primary" }: Props) {
         //     )
         // }
 
-        <View style={styles.buttonContainer}>
+        <View style={[styles.buttonContainer, theme === "primary" && styles.primaryButtonBorder]}>
             <Pressable
                 style={[styles.button, theme === "primary" ? styles.primaryButton : styles.secondaryButton]}
                 onPress={onPress}
-            // onPress={() => alert("You pressed a button.")}
             >
                 <FontAwesome
                     name="picture-o"
                     size={18}
                     color={theme === "primary" ? "#25292e" : "white"}
                 />
-                <Text style={[styles.text, { color: theme === "primary" ? "#25292e" : "#ffd33d" }]}>{label}</Text>
+                <Text style={[styles.buttonLabel, { color: theme === "primary" ? "#25292e" : "#fff" }]}>{label}</Text>
             </Pressable>
         </View>
     )
@@ -34,34 +33,40 @@ export default function Button({ label, onPress, theme = "primary" }: Props) {
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        backgroundColor: "white",
-        borderRadius: 10,
+        width: 320,
+        height: 68,
         marginHorizontal: 20,
         alignItems: "center",
         justifyContent: "center",
-        flexDirection: "row",
-        padding: 10,
-        height: 40,
+        padding: 3,
     },
     button: {
-        flexDirection: "row",
-        gap: 8,
-        justifyContent: "center",
-        alignItems: "center",
-        paddingVertical: 8,
         borderRadius: 10,
         width: "100%",
+        height: "100%",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "row",
+        gap: 8,
     },
     primaryButton: {
-        backgroundColor: "#ffd33d",
+        backgroundColor: "#fff",
+    },
+    primaryButtonBorder: {
+        backgroundColor: "#25292e",
+        borderWidth: 2,
+        borderColor: "#ffd33d",
+        borderRadius: 18,
+        padding: 4,
     },
     secondaryButton: {
         backgroundColor: "#25292e",
     },
-    text: {
-        color: "#25292e",
-        textAlign: "center",
-        fontSize: 20,
-        fontWeight: "bold",
+    buttonIcon: {
+        paddingRight: 8,
     },
-})
+    buttonLabel: {
+        color: "#fff",
+        fontSize: 16,
+    },
+});
