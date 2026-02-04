@@ -14,8 +14,8 @@ import { captureRef } from 'react-native-view-shot';
 
 // import { Image } from "expo-image";
 
-// const PlaceholderImage = require("../../assets/images/jonny-gios.jpg");
-const PlaceholderImage = require("@/assets/images/jonny-gios.jpg");
+// const PlaceholderImage = require("../../assets/images/background-image.jpg");
+const PlaceholderImage = require("@/assets/images/background-image.jpg");
 
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
